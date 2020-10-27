@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>dc.js Bar Chart using YAML and Jekyll | Your awesome title</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="dc.js Bar Chart using YAML and Jekyll" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/test.html" />
+<meta property="og:url" content="http://localhost:4000/test.html" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="dc.js Bar Chart using YAML and Jekyll" />
+<script type="application/ld+json">
+{"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"dc.js Bar Chart using YAML and Jekyll","@type":"WebPage","url":"http://localhost:4000/test.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/test.html">dc.js Bar Chart using YAML and Jekyll</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <head>
+  <h3>dc.js Bar Chart Using YAML and Jekyll</h3>
+  <meta charset="UTF-8">
+  <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/dc.css"/>-->
+  <script type="text/javascript" src="../js/d3.js"></script>
+  <script type="text/javascript" src="../js/crossfilter.js"></script>
+  <script type="text/javascript" src="../js/dc-4.0.0/dc.js"></script>
+</head>
+
+<style>
+  h3{
+    transform: translate(100px);
+  }
+  .container{
+    transform: translate(-100px);
+  }
+</style>
+
+<body>
+  <div class="container" id="test">
+
+  <script type="text/javascript">
+
+  var chart = new dc.BarChart("#test");
+  d3.json("/data/music-test-chart.json").then(function(data) {
+
+    /*data.forEach(functioa<head>
+
+      <h3>DC.js Dashboard Using YAML and Jekyll</h3>
+      <meta charset="UTF-8">
+
+      <!--Imports for .js and .css files-->
+      <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="../css/dc.css"/>-->
+      <link rel="stylesheet" href="../css/dc.css">
+      <script type="text/javascript" src="../js/d3.js"></script>
+      <script type="text/javascript" src="../js/crossfilter.js"></script>
+      <script type="text/javascript" src="../js/dc-4.0.0/dc.js"></script>
+    </head>
+
+
+    <!-- Custom CSS that can be improved on-->
+    <style>
+      body {
+        background-color: #222629;
+      }
+
+      h3{
+        transform: translate(60px);
+        color: whitesmoke;
+      }
+
+      .container{
+        transform: translate(-100px);
+      }
+
+      svg {
+        color: whitesmoke;
+      }
+
+      .chart {
+        background-color: #474b4f;
+        transform: translate(50px);
+        margin: 3px 1px;
+        text-align: center;
+        float: left;
+      }
+
+      .float-container {
+        padding: 10px;
+        width: 100%;
+      }
+
+      .float-child2 {
+        width: 50%;
+        float: left;
+      }
+
+      .float-child4 {
+        width: 25%;
+        float: left;
+      }
+
+    </style>
+
+    <body>
+      <!-- Creating containers to hold charts -->
+      <div style="width: 100%">
+        <div class="chart" id="dateFreq" style="margin-left: 1px;"></div>
+      </div>
+
+      <div class="float-container">
+        <div class="float-child2">
+          <div class="chart" id="cityRowChart"></div>
+        </div>
+        <div class="float-child2">
+          <div class="chart" id="genreRowChart" ></div>
+        </div>
+      </div>
+
+        <div class="float-container">
+        <div class="float-child4">
+          <div class="chart" id="affiliationChart"></div>
+        </div>
+        <div class="float-child4">
+          <div class="chart" id="genderChart"></div>
+        </div>
+        <div class="float-child4">
+          <div class="chart" id="languageChart"></div>
+        </div>
+        <div class="float-child4">
+          <div class="chart" id="sourceGenreChart"></div>
+        </div>
+      </div>
+
+
+      <script type="text/javascript">
+
+      // Create DC charts and bind them to the previously created containers
+      var testPieChart = new dc.PieChart("#pieChart");
+      var dateFreqChart = dc.barChart("#dateFreq");
+      var pubFromCitiesChart = dc.rowChart('#cityRowChart');
+      var genreChart = dc.rowChart('#genreRowChart');
+      var affiliationChart = dc.rowChart('#affiliationChart');
+      var genderChart = dc.pieChart('#genderChart');
+      var languageChart = dc.pieChart('#languageChart');
+      var sourceGenreChart = dc.pieChart('#sourceGenreChart');
+
+      // Main function for loading data into previously defined charts
+      d3.json("/data/music.json").then(function(data) {
+        var ndx = crossfilter(data);
+        var all = ndx.groupAll();
+
+        // Define Dimensions (you can think of these as the X axis) for charts, one per chart.
+        // There are two dataDim objects because it seems that charts to not like to share, which would
+        // make sense when interactive filtering is involed. The simplest solution would be to just have
+        // exclusive Dimensions & Groups for each chart.
+        var dateDim = ndx.dimension(d => {return d.date});
+        var dateDim2 = ndx.dimension(d => {return d.date});
+        var cityDim = ndx.dimension(d => {return d.pub_city});
+        var genreDim = ndx.dimension(d => {return d.genre});
+        var affiliationDim = ndx.dimension(d => {return d.affiliation});
+        var genderDim = ndx.dimension(d => {return d.gender});
+        var languageDim = ndx.dimension(d => {return d.language});
+        var sourceGenreDim = ndx.dimension(d => {return d.source_genre});
+
+        // Define Groups for each chart, counts the Frequency of the aforementioned Dimensions (Y axis)
+        var dateTypeGroup = dateDim.group();
+        var dateTypeGroup2 = dateDim2.group();
+        var cityGroup = cityDim.group();
+        var genreGroup = genreDim.group();
+        var affiliationGroup = affiliationDim.group();
+        var genderGroup = genderDim.group();
+        var languageGroup = languageDim.group();
+        var sourceGenreGroup = sourceGenreDim.group();
+
+        // Not visible in dashboard, more for experimentation purposes
+        testPieChart
+          .width(500)
+          .height(360)
+          .slicesCap(15)
+          .innerRadius(50)
+          .externalLabels(50)
+          .externalRadiusPadding(50)
+          .drawPaths(true)
+          //.x(d3.scaleLinear().domain([1970,2020]))
+          //.brushOn(false)
+          //.yAxisLabel("Frequency")
+          .dimension(dateDim)
+          .group(dateTypeGroup)
+          .legend(dc.legend())
+          //.controlsUseVisibility(true)
+          testPieChart
+          .on('pretransition', function(chart) {
+            chart.selectAll('.dc-lengend-item text')
+              .text('')
+              .append('tspan')
+              .text(function(d) {return d.name})
+              .append('tspan')
+              .attr('x', 100)
+              .attr('text-anchor', 'end')
+              .text(function(d) {return d.data});
+          });
+
+          // Bar chart that shows how many papers there are each year
+          // elasticX shrinks and expands the X axis as a user filters through the dashboard
+          // d.top(x) returns the top x items in the list, which is updated as the user filter thorugh the dashboard
+          dateFreqChart
+            .width(1000)
+            .height(200)
+            .margins({top: 10, right: 50, bottom: 30, left:40})
+            .dimension(dateDim2)
+            .group(dateTypeGroup2)
+            .x(d3.scaleLinear().domain([1970, 2021]));
+            //.elasticX(true)
+            //.data(d => {return d.top(3)})
+
+
+          pubFromCitiesChart
+            .width(500)
+            .height(200)
+            .x(d3.scaleLinear().domain[0, 30])
+            //.elasticX(true)
+            .dimension(cityDim)
+            .group(cityGroup)
+            .data(d => {return d.top(10)});
+
+
+          genreChart
+            .width(500)
+            .height(200)
+            .x(d3.scaleLinear().domain[0, 30])
+            //.elasticX(true)
+            .dimension(genreDim)
+            .group(genreGroup)
+            .data(d => {return d.top(10)});
+
+
+          affiliationChart
+            .width(400)
+            .height(250)
+            .x(d3.scaleLinear().domain[0, 30])
+            //.elasticX(true)
+            .dimension(affiliationDim)
+            .group(affiliationGroup)
+            .data(d => {return d.top(10)});
+
+
+          genderChart
+            .width(230)
+            .height(250)
+            .innerRadius(30)
+            .externalLabels(20)
+            .externalRadiusPadding(20)
+            .drawPaths(true)
+            .dimension(genderDim)
+            .group(genderGroup)
+            .on('pretransition', function(chart) {
+              chart.selectAll('text.pie-slice').text(d => {
+                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+              })
+            });
+
+
+          languageChart
+            .width(230)
+            .height(250)
+            .innerRadius(30)
+            .externalLabels(20)
+            .externalRadiusPadding(20)
+            .drawPaths(true)
+            .dimension(languageDim)
+            .group(languageGroup)
+            .on('pretransition', function(chart) {
+              chart.selectAll('text.pie-slice').text(d => {
+                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+              })
+            });
+
+
+          sourceGenreChart
+            .width(230)
+            .height(250)
+            .innerRadius(30)
+            .externalLabels(20)
+            .externalRadiusPadding(20)
+            .drawPaths(true)
+            .dimension(sourceGenreDim)
+            .group(sourceGenreGroup)
+            .on('pretransition', function(chart) {
+              chart.selectAll('text.pie-slice').text(d => {
+                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+              })
+            });
+
+          dc.renderAll();
+          });
+      </script>
+
+    </body>
+
+  </script>
+
+  </div>
+</body>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
